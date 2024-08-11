@@ -2,6 +2,7 @@
 
 include '../components/head.php';
 include '../db_connect.php';
+include 'head.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cp_id = $_POST['cp_id'];
@@ -25,13 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-<form method="POST" action="update_copyright.php">
-    Copyright ID (to update): <input type="text" name="cp_id"><br>
-    New Item ID: <input type="text" name="item_id"><br>
-    New Description: <input type="text" name="description"><br>
-    New Date of Registration: <input type="date" name="date_of_registration"><br>
-    New Nature: <input type="text" name="nature"><br>
-    New Business Name: <input type="text" name="Business_name"><br>
-    New Certificate Number: <input type="text" name="Certificate_number"><br>
-    <input type="submit" value="Update Copyright">
-</form>
+<div class="container">
+
+    <form method="POST" action="update.php" class='form-group'>
+        Copyright ID (to update): <input type="text" class='form-control' name="cp_id"><br>
+        New Item ID: <input type="text" class='form-control' name="item_id"><br>
+        New Description: <input type="text" class='form-control' name="description"><br>
+        New Date of Registration: <input type="date" class='form-control' name="date_of_registration"><br>
+        New Nature: <input type="text" class='form-control' name="nature"><br>
+        New Business Name: <input type="text" class='form-control' name="Business_name"><br>
+        New Certificate Number: <input type="text" class='form-control' name="Certificate_number"><br>
+        <input type="submit" value="Update Copyright">
+    </form>
+</div>
+
+
+<?php include '../components/footer.php'; ?>
